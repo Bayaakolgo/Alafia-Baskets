@@ -1,0 +1,10 @@
+body{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+}
+
+.jumbotron {
+  text-align: center;
+  padding: 20vh 20px 10vh 20px;
+}

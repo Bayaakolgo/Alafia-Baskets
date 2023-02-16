@@ -1,0 +1,42 @@
+{% extends 'product/base.html' %}
+{% block content %}
+    {% load static %}
+    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'product/catalogue.css' %}" />
+
+    <div class="container">
+        <div class="row">
+            {% for p in products %}
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-grid2">
+                        <div class="product-image2">
+                            <a href="#collapseExample" data-bs-toggle="collapse" aria-controls="collapseExample" aria-expanded="false" >
+                                <img src="{% static p.image.url %}" alt="image"/>
+                            </a>
+                            <ul class="social">
+                                <li>
+                                    <a href="#collapseExample" data-bs-toggle="collapse" aria-controls="collapseExample" aria-expanded="false" data-tip="Quick View">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="product-content">
+                            <h3 class="title">
+                                <a href="#collapseExample" data-bs-toggle="collapse" aria-controls="collapseExample" aria-expanded="false">
+                                    {{ p.name }}
+                                </a>
+                            </h3>
+                            <div class="price collapse" id="collapseExample">
+                                <div class="card card-body">
+                                    {{ p.description }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock content %}

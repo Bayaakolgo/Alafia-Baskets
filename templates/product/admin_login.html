@@ -1,0 +1,28 @@
+{% extends 'product/base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="{% static 'product/login.css' %}" />
+    <br><br>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-7">
+                <div class="card px-5 py-6" id="form1">
+                    <div class="form-data">
+                        <h3>Login</h3>
+                        <form method="POST">
+                            {% csrf_token %}
+                            {{ login_form|crispy }}
+                            <br>
+                            <div class="mb-3"> <button type="submit" class="btn btn-dark w-100">Login</button> </div>    
+                        </form>
+                        <hr>
+                        <p class="text-center"><a class="fgt" href="/password_reset">Forgot Password </a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+{% endblock content %}

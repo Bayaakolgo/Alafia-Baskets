@@ -1,0 +1,18 @@
+{% extends 'product/base.html' %}
+{% block content %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'product/home.css' %}" />
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <h1>Browse epic products..!</h1>
+            <p class="lead">
+                Awesome gallery of fantastic products - but only for myself. Nah, just kidding. My products are available to everybody.
+            </p>
+            <p>
+                <a class="btn btn-large btn-success" href="{% url 'product-catalogue' %}">Go on and check</a>
+            </p>
+        </div>
+    </div>
+    <br><br>
+    <br><br><br>
+{% endblock content %}
